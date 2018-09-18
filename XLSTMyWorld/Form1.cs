@@ -17,7 +17,7 @@ namespace XLSTMyWorld
         public DataWindow dataWindow = null;
 
         private string xmlData = "";
-        private string xsltStuff = "";
+        private string xsltData = "";
 
         public Form1()
         {
@@ -43,6 +43,7 @@ namespace XLSTMyWorld
                 outputWindow.MdiParent = this;
             }
             outputWindow.Show();
+            outputWindow.updateText(xsltData, xmlData);
         }
 
         private void editorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,16 +76,23 @@ namespace XLSTMyWorld
 
         public bool updateXsltData(string text)
         {
-            xsltStuff = text;
+            xsltData = text;
             return triggerUpdate();
         }
+
         internal bool triggerUpdate()
         {
             if (outputWindow != null)
             {
-                return outputWindow.updateText(xsltStuff, xmlData);
+                return outputWindow.updateText(xsltData, xmlData);
             }
             return false;
+        }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

@@ -34,6 +34,7 @@
             this.editorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,8 +60,8 @@
             // 
             this.viewsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editorToolStripMenuItem,
-            this.outputToolStripMenuItem,
-            this.xMLLayoutToolStripMenuItem});
+            this.xMLLayoutToolStripMenuItem,
+            this.outputToolStripMenuItem});
             this.viewsToolStripMenuItem.Name = "viewsToolStripMenuItem";
             this.viewsToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.viewsToolStripMenuItem.Text = "Views";
@@ -69,21 +70,21 @@
             // 
             this.editorToolStripMenuItem.Name = "editorToolStripMenuItem";
             this.editorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editorToolStripMenuItem.Text = "Editor";
+            this.editorToolStripMenuItem.Text = "XSLT Editor";
             this.editorToolStripMenuItem.Click += new System.EventHandler(this.editorToolStripMenuItem_Click);
             // 
             // outputToolStripMenuItem
             // 
             this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
             this.outputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.outputToolStripMenuItem.Text = "Output";
+            this.outputToolStripMenuItem.Text = "HTML Output";
             this.outputToolStripMenuItem.Click += new System.EventHandler(this.outputToolStripMenuItem_Click);
             // 
             // xMLLayoutToolStripMenuItem
             // 
             this.xMLLayoutToolStripMenuItem.Name = "xMLLayoutToolStripMenuItem";
             this.xMLLayoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xMLLayoutToolStripMenuItem.Text = "XML Layout";
+            this.xMLLayoutToolStripMenuItem.Text = "XML Viewer";
             this.xMLLayoutToolStripMenuItem.Click += new System.EventHandler(this.xMLLayoutToolStripMenuItem_Click);
             // 
             // Form1
@@ -94,7 +95,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "XSLT My World";
+            this.Text = "Xtra Small Large Tee (X.S.L.T)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -111,6 +112,7 @@
         private System.Windows.Forms.ToolStripMenuItem editorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem outputToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xMLLayoutToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 

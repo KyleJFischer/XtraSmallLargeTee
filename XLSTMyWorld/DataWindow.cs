@@ -23,19 +23,7 @@ namespace XLSTMyWorld
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
-                var xml = sr.ReadToEnd();
-                var name = openFileDialog1.FileName;
-                sr.Close();
-                xmlPaths.Add(name, xml);
-                listBox1.Items.Clear();
-                foreach(var item in xmlPaths)
-                {
-                    listBox1.Items.Add(item.Key);
-                }
-            }
+            browse();
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -60,6 +48,51 @@ namespace XLSTMyWorld
             var form1 = (Form1)this.MdiParent;
             form1.updateXMLData(xmlPaths[key]);
             mainKey = key;
+        }
+
+        private void DataWindow_Load(object sender, EventArgs e)
+        {
+            textBox1.ScrollBars = ScrollBars.Both;
+            // Allow the TAB key to be entered in the TextBox control.
+            textBox1.AcceptsReturn = true;
+            // Allow the TAB key to be entered in the TextBox control.
+            textBox1.AcceptsTab = true;
+        }
+
+        public void updateFont(Font font)
+        {
+            textBox1.Font = font;
+        }
+
+        private void browseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            browse();
+        }
+
+        internal void browse()
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
+                var xml = sr.ReadToEnd();
+                var name = openFileDialog1.FileName;
+                sr.Close();
+                xmlPaths.Add(name, xml);
+                listBox1.Items.Clear();
+                foreach (var item in xmlPaths)
+                {
+                    listBox1.Items.Add(item.Key);
+                }
+            }
+        }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = textBox1.Font;
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                updateFont(fontDialog1.Font);
+            }
         }
     }
 }

@@ -19,8 +19,18 @@ namespace XLSTMyWorld
             InitializeComponent();
         }
 
+        public void updateFont(Font font)
+        {
+            textBox1.Font = font;
+        }
+
         private void Editor_Load(object sender, EventArgs e)
         {
+            textBox1.ScrollBars = ScrollBars.Both;
+            textBox1.AcceptsReturn = true;
+            textBox1.AcceptsTab = true;
+
+            openFileDialog1.Filter = "XLS Files (*.xslt, *.xslt)|*.xslt; *.xslt|txt files (*.txt)|*.txt|All files (*.*)|*.*";
 
         }
 
@@ -43,6 +53,16 @@ namespace XLSTMyWorld
         {
             var form1 = (Form1)this.MdiParent;
             form1.updateXsltData(this.textBox1.Text);
+        }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = textBox1.Font;
+            if (fontDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                updateFont(fontDialog1.Font);
+               
+            }
         }
     }
 }
