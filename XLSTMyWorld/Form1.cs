@@ -134,5 +134,10 @@ namespace XLSTMyWorld
 
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            EditorWindow.saveFile();
+        }
     }
 }

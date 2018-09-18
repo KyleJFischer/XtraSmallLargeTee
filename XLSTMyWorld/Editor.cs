@@ -72,7 +72,7 @@ namespace XLSTMyWorld
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.IO.File.WriteAllText(currentLoadedFile, textBox1.Text);
+            saveFile();
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +82,18 @@ namespace XLSTMyWorld
                 System.IO.File.WriteAllText(saveFileDialog1.FileName, textBox1.Text);
                 currentLoadedFile = saveFileDialog1.FileName;
                 this.Text = $"Editor - {currentLoadedFile}";
+            }
+        }
+
+        public void saveFile()
+        {
+            try
+            {
+                System.IO.File.WriteAllText(currentLoadedFile, textBox1.Text);
+
+            } catch (Exception e)
+            {
+                
             }
         }
     }

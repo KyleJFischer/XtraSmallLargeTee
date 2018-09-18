@@ -127,8 +127,6 @@ namespace XLSTMyWorld
                     treeView1.Visible = false;
                     break;
             }
-
-           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
