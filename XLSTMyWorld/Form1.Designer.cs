@@ -32,8 +32,8 @@
             this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLLayoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.outputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,23 +69,23 @@
             // editorToolStripMenuItem
             // 
             this.editorToolStripMenuItem.Name = "editorToolStripMenuItem";
-            this.editorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.editorToolStripMenuItem.Text = "XSLT Editor";
             this.editorToolStripMenuItem.Click += new System.EventHandler(this.editorToolStripMenuItem_Click);
-            // 
-            // outputToolStripMenuItem
-            // 
-            this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
-            this.outputToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.outputToolStripMenuItem.Text = "HTML Output";
-            this.outputToolStripMenuItem.Click += new System.EventHandler(this.outputToolStripMenuItem_Click);
             // 
             // xMLLayoutToolStripMenuItem
             // 
             this.xMLLayoutToolStripMenuItem.Name = "xMLLayoutToolStripMenuItem";
-            this.xMLLayoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLLayoutToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.xMLLayoutToolStripMenuItem.Text = "XML Viewer";
             this.xMLLayoutToolStripMenuItem.Click += new System.EventHandler(this.xMLLayoutToolStripMenuItem_Click);
+            // 
+            // outputToolStripMenuItem
+            // 
+            this.outputToolStripMenuItem.Name = "outputToolStripMenuItem";
+            this.outputToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.outputToolStripMenuItem.Text = "HTML Output";
+            this.outputToolStripMenuItem.Click += new System.EventHandler(this.outputToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Xtra Small Large Tee (X.S.L.T)";
+            this.Text = "Xtra Small Large Tee (X.S.L.T) 👕";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

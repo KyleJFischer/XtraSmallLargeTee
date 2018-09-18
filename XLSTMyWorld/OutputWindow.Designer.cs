@@ -48,6 +48,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Name = "OutputWindow";
             this.Text = "OutputWindow";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputWindow_FormClosing);
             this.Load += new System.EventHandler(this.OutputWindow_Load);
             this.ResumeLayout(false);
 

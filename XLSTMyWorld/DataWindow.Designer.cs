@@ -127,6 +127,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DataWindow";
             this.Text = "XML Data Window";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DataWindow_FormClosed);
             this.Load += new System.EventHandler(this.DataWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

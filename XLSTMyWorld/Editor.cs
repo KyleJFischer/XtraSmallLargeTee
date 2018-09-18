@@ -12,7 +12,8 @@ namespace XLSTMyWorld
 {
     public partial class Editor : Form
     {
-        
+
+        private string currentLoadedFile = "";
 
         public Editor()
         {
@@ -36,7 +37,8 @@ namespace XLSTMyWorld
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            var form1 = (Form1)MdiParent;
+            form1.removeWindow(this);
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +47,8 @@ namespace XLSTMyWorld
             {
                 System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
                 textBox1.Text = sr.ReadToEnd();
-                this.Text = $"Editor {openFileDialog1.FileName}";
+                currentLoadedFile = openFileDialog1.FileName;
+            this.Text = $"Editor - {openFileDialog1.FileName}";
             }
         }
 
@@ -63,6 +66,11 @@ namespace XLSTMyWorld
                 updateFont(fontDialog1.Font);
                
             }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.IO.File.WriteAllText(currentLoadedFile, textBox1.Text);
         }
     }
 }

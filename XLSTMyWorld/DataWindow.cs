@@ -53,10 +53,9 @@ namespace XLSTMyWorld
         private void DataWindow_Load(object sender, EventArgs e)
         {
             textBox1.ScrollBars = ScrollBars.Both;
-            // Allow the TAB key to be entered in the TextBox control.
             textBox1.AcceptsReturn = true;
-            // Allow the TAB key to be entered in the TextBox control.
             textBox1.AcceptsTab = true;
+            openFileDialog1.Filter = "XML Files (*.xml)|*.xml;|txt files (*.txt)|*.txt|All files (*.*)|*.*";
         }
 
         public void updateFont(Font font)
@@ -83,6 +82,8 @@ namespace XLSTMyWorld
                 {
                     listBox1.Items.Add(item.Key);
                 }
+                textBox1.Text = xml;
+                makeMainData(name);
             }
         }
 
@@ -93,6 +94,12 @@ namespace XLSTMyWorld
             {
                 updateFont(fontDialog1.Font);
             }
+        }
+
+        private void DataWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var form1 = (Form1)MdiParent;
+            form1.removeWindow(this);
         }
     }
 }

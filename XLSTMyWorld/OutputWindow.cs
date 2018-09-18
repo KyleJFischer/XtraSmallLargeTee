@@ -56,5 +56,11 @@ namespace XLSTMyWorld
 
             return true;
         }
+
+        private void OutputWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var form1 = (Form1)MdiParent;
+            form1.removeWindow(this);
+        }
     }
 }
