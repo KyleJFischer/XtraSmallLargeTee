@@ -46,9 +46,12 @@ namespace XLSTMyWorld
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 System.IO.StreamReader sr = new System.IO.StreamReader(openFileDialog1.FileName);
-                textBox1.Text = sr.ReadToEnd();
+                var form1 = (Form1)this.MdiParent;
+                var text = sr.ReadToEnd();
+                textBox1.Text = text;
                 currentLoadedFile = openFileDialog1.FileName;
-            this.Text = $"Editor - {openFileDialog1.FileName}";
+                Text = $"Editor - {openFileDialog1.FileName}";
+                form1.updateXsltData(text);
             }
         }
 
@@ -64,13 +67,22 @@ namespace XLSTMyWorld
             if (fontDialog1.ShowDialog() != DialogResult.Cancel)
             {
                 updateFont(fontDialog1.Font);
-               
             }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.IO.File.WriteAllText(currentLoadedFile, textBox1.Text);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+            {
+                System.IO.File.WriteAllText(saveFileDialog1.FileName, textBox1.Text);
+                currentLoadedFile = saveFileDialog1.FileName;
+                this.Text = $"Editor - {currentLoadedFile}";
+            }
         }
     }
 }

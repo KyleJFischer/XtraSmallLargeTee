@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(605, 363);
             this.Controls.Add(this.webBrowser1);
             this.Name = "OutputWindow";
-            this.Text = "OutputWindow";
+            this.Text = "HTML Output";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OutputWindow_FormClosing);
             this.Load += new System.EventHandler(this.OutputWindow_Load);
             this.ResumeLayout(false);
